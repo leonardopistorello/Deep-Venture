@@ -5502,10 +5502,11 @@ MonoBehaviour:
   - {fileID: 1429141873}
   availableObjects:
   - {fileID: 8174830575594318150, guid: 90ad9b37384784543aa30d5f572b9e9e, type: 3}
+  - {fileID: 5504738343236187164, guid: 284fc07fcf4e6f94886e4ea9b6cdaa95, type: 3}
   - {fileID: 3070202932661715403, guid: 35dfdb519c6ee814388b374efd9738ee, type: 3}
   objects: []
-  objectsMinDistance: 2
-  objectsMaxDistance: 3
+  objectsMinDistance: 3
+  objectsMaxDistance: 9
   objectsMinY: -1.4
   objectsMaxY: 1.4
   objectsMinRotation: -45
