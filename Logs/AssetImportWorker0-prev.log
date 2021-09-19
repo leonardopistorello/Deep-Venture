@@ -1,0 +1,575 @@
+Using pre-set license
+
+ COMMAND LINE ARGUMENTS:
+/Applications/Unity/Hub/Editor/2020.3.16f1/Unity.app/Contents/MacOS/Unity
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+/Users/giorgia/GitHub/Deep-Venture
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+50203
+Successfully changed project path to: /Users/giorgia/GitHub/Deep-Venture
+/Users/giorgia/GitHub/Deep-Venture
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 54.67 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.16f1 (049d6eca3c44)
+[Subsystems] Discovering subsystems at path /Applications/Unity/Hub/Editor/2020.3.16f1/Unity.app/Contents/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path /Users/giorgia/GitHub/Deep-Venture/Assets
+GfxDevice: creating device client; threaded=0
+2021-09-19 11:29:06.323 Unity[1283:34377] Color LCD preferred device: Intel(R) Iris(TM) Plus Graphics 645 (low power)
+2021-09-19 11:29:06.323 Unity[1283:34377] Metal devices available: 1
+2021-09-19 11:29:06.323 Unity[1283:34377] 0: Intel(R) Iris(TM) Plus Graphics 645 (low power)
+2021-09-19 11:29:06.324 Unity[1283:34377] Using device Intel(R) Iris(TM) Plus Graphics 645 (low power)
+Initializing Metal device caps: Intel(R) Iris(TM) Plus Graphics 645
+Initialize mono
+Mono path[0] = '/Applications/Unity/Hub/Editor/2020.3.16f1/Unity.app/Contents/Managed'
+Mono path[1] = '/Applications/Unity/Hub/Editor/2020.3.16f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = '/Applications/Unity/Hub/Editor/2020.3.16f1/Unity.app/Contents/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56283
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: /Applications/Unity/Hub/Editor/2020.3.16f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+Registered in 0.002518 seconds.
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 47.30 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  4.977 seconds
+Domain Reload Profiling:
+	ReloadAssembly (4977ms)
+		BeginReloadAssembly (55ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (557ms)
+			LoadAssemblies (56ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (220ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (49ms)
+			SetupLoadedEditorAssemblies (221ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (4ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (47ms)
+				BeforeProcessingInitializeOnLoad (11ms)
+				ProcessInitializeOnLoadAttributes (121ms)
+				ProcessInitializeOnLoadMethodAttributes (36ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.006149 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 44.05 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.574 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1575ms)
+		BeginReloadAssembly (206ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (41ms)
+		EndReloadAssembly (1288ms)
+			LoadAssemblies (129ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (400ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (80ms)
+			SetupLoadedEditorAssemblies (533ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (44ms)
+				BeforeProcessingInitializeOnLoad (85ms)
+				ProcessInitializeOnLoadAttributes (381ms)
+				ProcessInitializeOnLoadMethodAttributes (16ms)
+				AfterProcessingInitializeOnLoad (1ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launching external process: /Applications/Unity/Hub/Editor/2020.3.16f1/Unity.app/Contents/Tools/UnityShaderCompiler
+Launched and connected shader compiler UnityShaderCompiler after 0.02 seconds
+Refreshing native plugins compatible for Editor in 0.52 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2105 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 176.3 MB.
+System memory in use after: 176.4 MB.
+
+Unloading 28 unused Assets to reduce memory usage. Loaded Objects now: 2542.
+Total: 4.915786 ms (FindLiveObjects: 0.240335 ms CreateObjectMapping: 0.089176 ms MarkObjects: 4.507446 ms  DeleteObjects: 0.077741 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  path: Assets/Sottomarini/Sottomarino Arancione Corto (Animazione)/1.png
+  artifactKey: Guid(fc51077dbfc22b34d921d9b66c393878) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sottomarini/Sottomarino Arancione Corto (Animazione)/1.png using Guid(fc51077dbfc22b34d921d9b66c393878) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b5e5d9b1373f977df3d297b2f10f455') in 1.350547 seconds 
+  Import took 1.357349 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000267 seconds.
+  path: Assets/Sottomarini/Sottomarino Arancione Corto (Animazione)/3.png
+  artifactKey: Guid(c482d0dde445e084ca4b99dc12b95011) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sottomarini/Sottomarino Arancione Corto (Animazione)/3.png using Guid(c482d0dde445e084ca4b99dc12b95011) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '810cec463638bf7193e6804dc6457bba') in 0.030864 seconds 
+  Import took 0.035757 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000428 seconds.
+  path: Assets/Sottomarini/Sottomarino Arancione Lungo (Animanzione)/1.png
+  artifactKey: Guid(614c7f2636ba52f479df7627ede161cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sottomarini/Sottomarino Arancione Lungo (Animanzione)/1.png using Guid(614c7f2636ba52f479df7627ede161cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e9e0d6ff97593bf774db7dd758c74578') in 0.019244 seconds 
+  Import took 0.024379 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000278 seconds.
+  path: Assets/Sottomarini/Sottomarino Arancione Lungo (Animanzione)/3.png
+  artifactKey: Guid(8ce56468f621bc849ab10c3dc2682002) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sottomarini/Sottomarino Arancione Lungo (Animanzione)/3.png using Guid(8ce56468f621bc849ab10c3dc2682002) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b9c3c487499aa98b828ef644cf867eba') in 0.026980 seconds 
+  Import took 0.032024 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000372 seconds.
+  path: Assets/Sottomarini/Sottomarino Arruginito Corto (Animazione)/2.png
+  artifactKey: Guid(17c6df4585a09084a8039c5a31d71025) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sottomarini/Sottomarino Arruginito Corto (Animazione)/2.png using Guid(17c6df4585a09084a8039c5a31d71025) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f85f8ac1c5d0e35f4a06c3fe0fcfdbb8') in 0.019340 seconds 
+  Import took 0.024632 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000280 seconds.
+  path: Assets/Sottomarini/Sottomarino Arruginito Corto (Animazione)/0.png
+  artifactKey: Guid(2cb24009d472c8d43a54aa60da3c72eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sottomarini/Sottomarino Arruginito Corto (Animazione)/0.png using Guid(2cb24009d472c8d43a54aa60da3c72eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c66fd78395b8bc50b3e8c824c6e2ace') in 0.013371 seconds 
+  Import took 0.017171 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000216 seconds.
+  path: Assets/Sottomarini/Sottomarino Arruginito Corto (Animazione)/1.png
+  artifactKey: Guid(b12bb76c634ec3740bb93be73a25e842) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sottomarini/Sottomarino Arruginito Corto (Animazione)/1.png using Guid(b12bb76c634ec3740bb93be73a25e842) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d605410ed9270c37ad5290567e2a991') in 0.013283 seconds 
+  Import took 0.017358 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000308 seconds.
+  path: Assets/Sottomarini/Sottomarino Arancione Corto (Animazione)/4.png
+  artifactKey: Guid(f0c8bc38a6dfb384fa684bfd5d0ae986) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sottomarini/Sottomarino Arancione Corto (Animazione)/4.png using Guid(f0c8bc38a6dfb384fa684bfd5d0ae986) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7bbd79b3350b9be3af583fbb25583d74') in 0.014251 seconds 
+  Import took 0.018200 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000243 seconds.
+  path: Assets/Sottomarini/Sottomarino Oro Corto (Animazione)/2.png
+  artifactKey: Guid(c70c501136051e34aab191539000d2c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sottomarini/Sottomarino Oro Corto (Animazione)/2.png using Guid(c70c501136051e34aab191539000d2c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47861ddf365acc9067bef38f544853a2') in 0.026008 seconds 
+  Import took 0.030038 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000280 seconds.
+  path: Assets/Sottomarini/Sottomarino Oro Corto (Animazione)/0.png
+  artifactKey: Guid(24e71822e773f5142b31f46a7ca55c00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sottomarini/Sottomarino Oro Corto (Animazione)/0.png using Guid(24e71822e773f5142b31f46a7ca55c00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4eb44fc373278a6f185425cb4d0ae799') in 0.017139 seconds 
+  Import took 0.021773 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000263 seconds.
+  path: Assets/Sottomarini/Sottomarino Arancione Lungo (Animanzione)/2.png
+  artifactKey: Guid(eb8b4c7aeeff6244395b17e3ca4dc382) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sottomarini/Sottomarino Arancione Lungo (Animanzione)/2.png using Guid(eb8b4c7aeeff6244395b17e3ca4dc382) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc73ee5d3ac8e76736aa268efeb1ee46') in 0.014825 seconds 
+  Import took 0.018500 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000256 seconds.
+  path: Assets/Sottomarini/Sottomarino Arruginito Corto (Animazione)/3.png
+  artifactKey: Guid(a46af8c4fc0f901468e926a3f8dab296) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sottomarini/Sottomarino Arruginito Corto (Animazione)/3.png using Guid(a46af8c4fc0f901468e926a3f8dab296) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0563cf2696cbcee80212cb06fe497dd3') in 0.018610 seconds 
+  Import took 0.023312 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000258 seconds.
+  path: Assets/Sottomarini/Sottomarino Oro Corto (Animazione)/1.png
+  artifactKey: Guid(ab251a4c75265bd45ba23b3b78dd2f64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sottomarini/Sottomarino Oro Corto (Animazione)/1.png using Guid(ab251a4c75265bd45ba23b3b78dd2f64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e8e332883d744e6352b19ad5a484856') in 0.032168 seconds 
+  Import took 0.037754 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000376 seconds.
+  path: Assets/Sottomarini/Sottomarino Arancione Corto (Animazione)/2.png
+  artifactKey: Guid(d66ff356dc471184797013a71377a505) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sottomarini/Sottomarino Arancione Corto (Animazione)/2.png using Guid(d66ff356dc471184797013a71377a505) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '69e8e7521ba8971231efeee2372a8901') in 0.024688 seconds 
+  Import took 0.028995 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000268 seconds.
+  path: Assets/Sottomarini/Sottomarino Arancione Lungo (Animanzione)/0.png
+  artifactKey: Guid(c8dd3dc90afb466448c3c6c218f8ea6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sottomarini/Sottomarino Arancione Lungo (Animanzione)/0.png using Guid(c8dd3dc90afb466448c3c6c218f8ea6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d5d3747e2b3d5bcad9c2d2e9dde01e4') in 0.015064 seconds 
+  Import took 0.019042 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000237 seconds.
+  path: Assets/Sottomarini/Sottomarino Oro Corto (Animazione)/3.png
+  artifactKey: Guid(887a8cc280e1a3c4284caf0b074c8e08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sottomarini/Sottomarino Oro Corto (Animazione)/3.png using Guid(887a8cc280e1a3c4284caf0b074c8e08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '269b94d711841f04977031707c8c2d3e') in 0.027247 seconds 
+  Import took 0.030947 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.399063 seconds.
+  path: Assets/Sottomarini/Sottomarino Oro Lungo (Animazione)/0.png
+  artifactKey: Guid(92acb61ba06bcde4fb746b66eb744579) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sottomarini/Sottomarino Oro Lungo (Animazione)/0.png using Guid(92acb61ba06bcde4fb746b66eb744579) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6143cf0f02d99bf6a06ff504ecd3e8e7') in 0.016544 seconds 
+  Import took 0.022118 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000357 seconds.
+  path: Assets/Sottomarini/Sottomarino Oro Lungo (Animazione)/3.png
+  artifactKey: Guid(8c247b53309d656479740313bf90b357) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sottomarini/Sottomarino Oro Lungo (Animazione)/3.png using Guid(8c247b53309d656479740313bf90b357) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d0900015b24de5ae7f849a63164f6b0') in 0.015689 seconds 
+  Import took 0.021020 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000375 seconds.
+  path: Assets/Sottomarini/Sottomarino Oro Lungo (Animazione)/1.png
+  artifactKey: Guid(7ee43b8ebb07661438a82d054e8c3a8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sottomarini/Sottomarino Oro Lungo (Animazione)/1.png using Guid(7ee43b8ebb07661438a82d054e8c3a8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1e1488374efb8e7c871485674b0c648e') in 0.027110 seconds 
+  Import took 0.033343 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000284 seconds.
+  path: Assets/Sottomarini/Sottomarino Oro Lungo (Animazione)/2.png
+  artifactKey: Guid(0eeb2ec41ffd31042b804245358c2110) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sottomarini/Sottomarino Oro Lungo (Animazione)/2.png using Guid(0eeb2ec41ffd31042b804245358c2110) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f9ab6ba5779be928b0eafe1fac242f43') in 0.047333 seconds 
+  Import took 0.053340 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.206648 seconds.
+  path: Assets/Sottomarini/Sottomarino Sci-Fi Corto (Animazione)/0.png
+  artifactKey: Guid(3f39b6936819c38459fd3284ec909754) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sottomarini/Sottomarino Sci-Fi Corto (Animazione)/0.png using Guid(3f39b6936819c38459fd3284ec909754) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6715b4b0debee8b6f8f15e344ecb9a1d') in 0.023638 seconds 
+  Import took 0.028808 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000406 seconds.
+  path: Assets/Sottomarini/Sottomarino Sci-Fi Corto (Animazione)/2.png
+  artifactKey: Guid(c843becd9137fa24ab593b38a69819c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sottomarini/Sottomarino Sci-Fi Corto (Animazione)/2.png using Guid(c843becd9137fa24ab593b38a69819c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2bd536722666df320f13e36de9a603d') in 0.018664 seconds 
+  Import took 0.024216 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000311 seconds.
+  path: Assets/Sottomarini/Sottomarino Sci-Fi Corto (Animazione)/3.png
+  artifactKey: Guid(aee8a5ea31e9eea40a78e6eb2284256c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sottomarini/Sottomarino Sci-Fi Corto (Animazione)/3.png using Guid(aee8a5ea31e9eea40a78e6eb2284256c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e4cca0eb506fe3efe0f9aa5f43d8d339') in 0.023440 seconds 
+  Import took 0.028905 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000299 seconds.
+  path: Assets/Sottomarini/Sottomarino Sci-Fi Corto (Animazione)/1.png
+  artifactKey: Guid(eabaaade18f4b874683cac0f60d4384e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sottomarini/Sottomarino Sci-Fi Corto (Animazione)/1.png using Guid(eabaaade18f4b874683cac0f60d4384e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c233cfdf613efb5f216064618fbcd0c5') in 0.040253 seconds 
+  Import took 0.045255 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 15.699899 seconds.
+  path: Assets/Sottomarini/Sottomarino Sci-Fi Lungo (Animazione)/0.png
+  artifactKey: Guid(ad19970a47b049e448cdfb22b5310f59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sottomarini/Sottomarino Sci-Fi Lungo (Animazione)/0.png using Guid(ad19970a47b049e448cdfb22b5310f59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '101d1efe93788a2d58258aa765589615') in 0.018672 seconds 
+  Import took 0.023271 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000254 seconds.
+  path: Assets/Sottomarini/Sottomarino Sci-Fi Lungo (Animazione)/2.png
+  artifactKey: Guid(e5c9815176c27e343a40075119363cc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sottomarini/Sottomarino Sci-Fi Lungo (Animazione)/2.png using Guid(e5c9815176c27e343a40075119363cc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b516b6654c4cf699e2fb6d0cb7579ec3') in 0.014013 seconds 
+  Import took 0.017826 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000439 seconds.
+  path: Assets/Sottomarini/Sottomarino Sci-Fi Lungo (Animazione)/1.png
+  artifactKey: Guid(686b58d302aa5984e91fd6a0267180a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sottomarini/Sottomarino Sci-Fi Lungo (Animazione)/1.png using Guid(686b58d302aa5984e91fd6a0267180a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e4b5d0c05157ebbfabfa92185269eea8') in 0.024986 seconds 
+  Import took 0.030446 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000276 seconds.
+  path: Assets/Sottomarini/Sottomarino Sci-Fi Lungo (Animazione)/3.png
+  artifactKey: Guid(7966f3b9b2249aa468207a6ac774e890) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sottomarini/Sottomarino Sci-Fi Lungo (Animazione)/3.png using Guid(7966f3b9b2249aa468207a6ac774e890) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45beec8f9ca79e3483655cdce9637043') in 0.031377 seconds 
+  Import took 0.037137 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.008027 seconds.
+  path: Assets/Sottomarini/Sottomarino Sci-Fi Lungo (Animazione)/3.png
+  artifactKey: Guid(7966f3b9b2249aa468207a6ac774e890) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sottomarini/Sottomarino Sci-Fi Lungo (Animazione)/3.png using Guid(7966f3b9b2249aa468207a6ac774e890) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45beec8f9ca79e3483655cdce9637043') in 0.011623 seconds 
+  Import took 0.016103 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 234.407319 seconds.
+  path: Assets/UnderwaterFantasy/Scenes
+  artifactKey: Guid(8398263bcdabe4e26bed5332093483dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UnderwaterFantasy/Scenes using Guid(8398263bcdabe4e26bed5332093483dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '46170f6edcd924636fbba3a9d6ca4e9c') in 0.001657 seconds 
+  Import took 0.007398 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 154.841138 seconds.
+  path: Assets/RW/Scenes/TapPanic.unity
+  artifactKey: Guid(b21dba2481bea4d359a2f859eefc5806) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RW/Scenes/TapPanic.unity using Guid(b21dba2481bea4d359a2f859eefc5806) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c5576c0bc2bbf36bdc5866815c75ea1c') in 0.003263 seconds 
+  Import took 0.007934 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 13.932801 seconds.
+  path: Assets/RW/Scripts/SubmarineController.cs
+  artifactKey: Guid(5bcb15b892943ba4ba19300d1c5b51ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RW/Scripts/SubmarineController.cs using Guid(5bcb15b892943ba4ba19300d1c5b51ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '142fdbe4526d0b4c2c5e8b414ee90376') in 0.668127 seconds 
+  Import took 0.673241 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 42.047805 seconds.
+  path: Assets/RW/Sprites/Restart Button.png
+  artifactKey: Guid(5aefa339841da5749bf1322f5220bfd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RW/Sprites/Restart Button.png using Guid(5aefa339841da5749bf1322f5220bfd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b1e5ee4f5d558ca471c098f5f6591f20') in 0.022093 seconds 
+  Import took 0.027518 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.740527 seconds.
+  path: Assets/RW/Prefabs/coin.prefab
+  artifactKey: Guid(02d28ba961ea75d4c81819311141ad74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RW/Prefabs/coin.prefab using Guid(02d28ba961ea75d4c81819311141ad74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '809f02ff52b4f1edb267fecb4162d3d1') in 1.479711 seconds 
+  Import took 1.484314 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000230 seconds.
+  path: Assets/RW/Prefabs/coins_line.prefab
+  artifactKey: Guid(90ad9b37384784543aa30d5f572b9e9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RW/Prefabs/coins_line.prefab using Guid(90ad9b37384784543aa30d5f572b9e9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '361f0656bd461becaf5ec61a82d372d5') in 0.013381 seconds 
+  Import took 0.017897 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000333 seconds.
+  path: Assets/RW/Prefabs/singleCoin.prefab
+  artifactKey: Guid(35dfdb519c6ee814388b374efd9738ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RW/Prefabs/singleCoin.prefab using Guid(35dfdb519c6ee814388b374efd9738ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e1e22f51fb16cbe7ebd0c371630aee2') in 0.030114 seconds 
+  Import took 0.035209 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000301 seconds.
+  path: Assets/RW/Prefabs/room1.prefab
+  artifactKey: Guid(c9ba32927fcd5aa43be0b0a0883c33b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RW/Prefabs/room1.prefab using Guid(c9ba32927fcd5aa43be0b0a0883c33b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86f117b6c112bd83bcf11536e5952f7d') in 0.028867 seconds 
+  Import took 0.035549 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000376 seconds.
+  path: Assets/RW/Prefabs/laser.prefab
+  artifactKey: Guid(284fc07fcf4e6f94886e4ea9b6cdaa95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RW/Prefabs/laser.prefab using Guid(284fc07fcf4e6f94886e4ea9b6cdaa95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10ecd26600659b185aac3b7568305709') in 0.026137 seconds 
+  Import took 0.030833 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 104.265168 seconds.
+  path: Assets/RW/Scripts
+  artifactKey: Guid(2acc740995e8ed04ab91e8cb51fa494d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RW/Scripts using Guid(2acc740995e8ed04ab91e8cb51fa494d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '44fd966d34e284890dee1009a81f482f') in 0.001458 seconds 
+  Import took 0.006974 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 27.649800 seconds.
+  path: Assets/RW/Scripts/SharkController.cs
+  artifactKey: Guid(3c8c2c4118a8b4f52a285b62ca38ea96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RW/Scripts/SharkController.cs using Guid(3c8c2c4118a8b4f52a285b62ca38ea96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20a0e42a8c77b175f5c4b88993095952') in 0.003323 seconds 
+  Import took 0.008181 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003773 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.55 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.386 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1386ms)
+		BeginReloadAssembly (199ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (8ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (112ms)
+		EndReloadAssembly (1113ms)
+			LoadAssemblies (95ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (403ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (62ms)
+			SetupLoadedEditorAssemblies (415ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (79ms)
+				ProcessInitializeOnLoadAttributes (321ms)
+				ProcessInitializeOnLoadMethodAttributes (7ms)
+				AfterProcessingInitializeOnLoad (1ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (13ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.63 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2096 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 192.3 MB.
+System memory in use after: 192.4 MB.
+
+Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 2558.
+Total: 4.277098 ms (FindLiveObjects: 0.321194 ms CreateObjectMapping: 0.095982 ms MarkObjects: 3.817027 ms  DeleteObjects: 0.041593 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004633 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 0.56 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.315 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1315ms)
+		BeginReloadAssembly (162ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (8ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (82ms)
+		EndReloadAssembly (1078ms)
+			LoadAssemblies (88ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (381ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (62ms)
+			SetupLoadedEditorAssemblies (413ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (79ms)
+				ProcessInitializeOnLoadAttributes (319ms)
+				ProcessInitializeOnLoadMethodAttributes (7ms)
+				AfterProcessingInitializeOnLoad (1ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (13ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.50 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2096 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 192.6 MB.
+System memory in use after: 192.7 MB.
+
+Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 2561.
+Total: 3.703634 ms (FindLiveObjects: 0.271497 ms CreateObjectMapping: 0.091248 ms MarkObjects: 3.302103 ms  DeleteObjects: 0.037792 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 386.695695 seconds.
+  path: Assets/RW/Scripts/SharkController.cs
+  artifactKey: Guid(3c8c2c4118a8b4f52a285b62ca38ea96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RW/Scripts/SharkController.cs using Guid(3c8c2c4118a8b4f52a285b62ca38ea96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '938f3b4fdd0338dc8a0dca9221997038') in 0.010921 seconds 
+  Import took 0.015400 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.027522 seconds.
+  path: Assets/RW/Scripts/SharkController.cs
+  artifactKey: Guid(3c8c2c4118a8b4f52a285b62ca38ea96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RW/Scripts/SharkController.cs using Guid(3c8c2c4118a8b4f52a285b62ca38ea96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '938f3b4fdd0338dc8a0dca9221997038') in 0.001339 seconds 
+  Import took 0.005099 seconds .
+
