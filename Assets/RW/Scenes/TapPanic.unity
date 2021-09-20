@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &55068215 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7557703564338953063, guid: 5b787f909c80a44b0b02cdfe22f7814a, type: 3}
+  m_PrefabInstance: {fileID: 8952159787194025438}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &407291227 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8240405380278679405, guid: e8366d9c59a8673419d29da093ad444f, type: 3}
@@ -215,11 +220,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pooledObjects: []
+  pooledRooms: []
   FishesToPool:
   - {fileID: 981408280}
+  room: {fileID: 55068215}
   BombToPool: {fileID: 407291227}
-  amountOfFishesToPool: 5
-  amountOfBombsToPool: 3
+  amountOfFishesToPool: 30
+  amountOfBombsToPool: 30
+  amountOfRooms: 30
 --- !u!4 &730805627
 Transform:
   m_ObjectHideFlags: 0
@@ -587,14 +595,11 @@ MonoBehaviour:
   - {fileID: 7557703564338953063, guid: 5b787f909c80a44b0b02cdfe22f7814a, type: 3}
   currentRooms:
   - {fileID: 7557703564338953063, guid: 5b787f909c80a44b0b02cdfe22f7814a, type: 3}
-  availableObjects: []
   objects: []
   objectsMinDistance: 5
   objectsMaxDistance: 10
   objectsMinY: -1.4
   objectsMaxY: 1.4
-  objectsMinRotation: 0
-  objectsMaxRotation: 0
 --- !u!1001 &8952159787194025438
 PrefabInstance:
   m_ObjectHideFlags: 0
