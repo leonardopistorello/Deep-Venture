@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GeneratorScript : MonoBehaviour
+public class TapGenerator : MonoBehaviour
 {
     public GameObject[] availableRooms;
     public List<GameObject> currentRooms;
@@ -24,7 +24,7 @@ public class GeneratorScript : MonoBehaviour
     void AddObject(float lastObjectX)
     {
         //1
-        int randomIndex = Random.Range(0, (availableObjects.Length-1));
+        int randomIndex = Random.Range(0, availableObjects.Length);
         //2
         GameObject obj = (GameObject)Instantiate(availableObjects[randomIndex]);
         //3
@@ -75,7 +75,7 @@ public class GeneratorScript : MonoBehaviour
 
     void AddRoom(float farthestRoomEndX)
     {
-        int randomRoomIndex = Random.Range(0, (availableRooms.Length-1));
+        int randomRoomIndex = Random.Range(0, availableRooms.Length);
         GameObject room = (GameObject)Instantiate(availableRooms[randomRoomIndex]);
         float roomWidth = room.transform.Find("Floor").localScale.x;
         float roomCenter = farthestRoomEndX + roomWidth * 0.5f;

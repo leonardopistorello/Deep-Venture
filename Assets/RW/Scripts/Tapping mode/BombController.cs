@@ -1,19 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 
 public class BombController : MonoBehaviour
 {
-   public float speed_x = 1f; 
-   public float speed_y = 1f;
+   public float min_speedX = 1f;
+   public float max_speedX = 3f;
+   public float min_speedY = 5f;
+   public float max_speedY = 12f;
    private Vector3 movement_x = Vector3.zero;
    private Vector3 movement_y = Vector3.zero;
 
    private void Start() {
-       movement_x = new Vector3(-1f,0f,0f) * speed_x; 
-       movement_y = new Vector3(0,-1f,0f) * speed_y;
-       transform.position = new Vector3(16f,0f,0f);
+       movement_x = new Vector3(-1f,0f,0f) * Random.Range(min_speedX,max_speedX);  
+       movement_y = new Vector3(0,-1f,0f) * Random.Range(min_speedY,max_speedY);
        Debug.Log("Start");      
    }
 
@@ -24,10 +24,10 @@ public class BombController : MonoBehaviour
             movement_y = -movement_y;
    }
 
-    /* gestione danno dello squalo */
     private void OnMouseDown() 
     {
-        DestroyAllGameObjects();
+       // DestroyAllGameObjects();
+       Destroy(this.gameObject);
         Debug.Log("GameOver()");
     }
 
@@ -42,4 +42,6 @@ public class BombController : MonoBehaviour
          Destroy(GameObjects[i]);
      }
  }
+
+
 }
