@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class TapGenerator : MonoBehaviour
 {
@@ -8,7 +9,6 @@ public class TapGenerator : MonoBehaviour
     public List<GameObject> currentRooms;
     private float screenWidthInPoints;
 
-    public GameObject[] availableObjects;
     public List<GameObject> objects;
 
     public float objectsMinDistance = 5.0f;
@@ -17,24 +17,29 @@ public class TapGenerator : MonoBehaviour
     public float objectsMinY = -1.4f;
     public float objectsMaxY = 1.4f;
 
-    public float objectsMinRotation = -45.0f;
-    public float objectsMaxRotation = 45.0f;
-
-
     void AddObject(float lastObjectX)
     {
+        int maxRange = ObjectPool.SharedInstance.amountOfBombsToPool + ObjectPool.SharedInstance.amountOfFishesToPool;
         //1
-        int randomIndex = Random.Range(0, availableObjects.Length);
+        int randomIndex = UnityEngine.Random.Range(0, maxRange - 1);
+        GameObject obj;
         //2
-        GameObject obj = (GameObject)Instantiate(availableObjects[randomIndex]);
+        try
+        {
+            obj = ObjectPool.SharedInstance.GetPooledIObj(randomIndex);
+        }
+        catch (NullReferenceException e)
+        {
+            Debug.Log("Sono un pesce e sono null");
+            obj = ObjectPool.SharedInstance.GetPooledObject();
+        }
+  
+        obj.SetActive(true);
         //3
-        float objectPositionX = lastObjectX + Random.Range(objectsMinDistance, objectsMaxDistance);
-        float randomY = Random.Range(objectsMinY, objectsMaxY);
+        float objectPositionX = lastObjectX + UnityEngine.Random.Range(objectsMinDistance, objectsMaxDistance);
+        float randomY = UnityEngine.Random.Range(objectsMinY, objectsMaxY);
         obj.transform.position = new Vector3(objectPositionX, randomY, 0);
         //4
-        float rotation = Random.Range(objectsMinRotation, objectsMaxRotation);
-        obj.transform.rotation = Quaternion.Euler(Vector3.forward * rotation);
-        //5
         objects.Add(obj);
     }
 
@@ -63,7 +68,7 @@ public class TapGenerator : MonoBehaviour
         foreach (var obj in objectsToRemove)
         {
                 objects.Remove(obj);
-                Destroy(obj);
+                obj.SetActive(false);
         }
         //7
         if (farthestObjectX < addObjectX)
@@ -75,8 +80,9 @@ public class TapGenerator : MonoBehaviour
 
     void AddRoom(float farthestRoomEndX)
     {
-        int randomRoomIndex = Random.Range(0, availableRooms.Length);
-        GameObject room = (GameObject)Instantiate(availableRooms[randomRoomIndex]);
+        GameObject room = ObjectPool.SharedInstance.GetPooledRoom();
+       
+        room.SetActive(true);
         float roomWidth = room.transform.Find("Floor").localScale.x;
         float roomCenter = farthestRoomEndX + roomWidth * 0.5f;
         room.transform.position = new Vector3(roomCenter, 0, 0);
@@ -120,7 +126,7 @@ public class TapGenerator : MonoBehaviour
         foreach (var room in roomsToRemove)
         {
             currentRooms.Remove(room);
-            Destroy(room);
+            room.SetActive(false);
         }
         //12
         if (addRooms)

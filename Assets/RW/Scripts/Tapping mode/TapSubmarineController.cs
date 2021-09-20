@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TapSubmarineController : MonoBehaviour
 {
-    public int speed = 3;
+    public int speed_y = 3;
     private Rigidbody2D rigidBody; 
     private Vector3 bottom = new Vector3(-7.731f,-2.7f,0f); // posizione più bassa raggiungibile dal sottomarino
     private Vector3 upper = new Vector3(-7.731f,2.7f,0f); // posizione più alta raggiungibile dal sottomarino
@@ -18,7 +18,7 @@ public class TapSubmarineController : MonoBehaviour
     {
         rigidBody = GetComponent<Rigidbody2D>();
         transform.position = new Vector3(-7f,0f,0f); //posizione iniziale del sottomarino
-        movement_y = new Vector3(0,-1f,0f) * speed;
+        movement_y = new Vector3(0,-1f,0f) * speed_y;
         
     }
 

@@ -26,8 +26,8 @@ public class BombController : MonoBehaviour
 
     private void OnMouseDown() 
     {
-       // DestroyAllGameObjects();
-       Destroy(this.gameObject);
+        // DestroyAllGameObjects();
+        this.gameObject.SetActive(false);
         Debug.Log("GameOver()");
     }
 
