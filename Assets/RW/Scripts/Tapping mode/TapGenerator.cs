@@ -19,11 +19,12 @@ public class TapGenerator : MonoBehaviour
 
     void AddObject(float lastObjectX)
     {
-        int maxRange = ObjectPool.SharedInstance.amountOfBombsToPool + ObjectPool.SharedInstance.amountOfFishesToPool;
+        int maxRange = ObjectPool.SharedInstance.amountOfBombsToPool + ObjectPool.SharedInstance.amountOfFishesToPool
+                       + ObjectPool.SharedInstance.amountOfSeaweedToPool;
         //1
         int randomIndex = UnityEngine.Random.Range(0, maxRange - 1);
         GameObject obj;
-        //2
+        //2 
         try
         {
             obj = ObjectPool.SharedInstance.GetPooledIObj(randomIndex);
@@ -34,7 +35,7 @@ public class TapGenerator : MonoBehaviour
             obj = ObjectPool.SharedInstance.GetPooledObject();
         }
   
-        obj.SetActive(true);
+         obj.SetActive(true);
         //3
         float objectPositionX = lastObjectX + UnityEngine.Random.Range(objectsMinDistance, objectsMaxDistance);
         float randomY = UnityEngine.Random.Range(objectsMinY, objectsMaxY);
