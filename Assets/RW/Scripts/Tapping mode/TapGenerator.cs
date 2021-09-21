@@ -68,12 +68,13 @@ public class TapGenerator : MonoBehaviour
 
     void AddRoom(float farthestRoomEndX)
     {
-        GameObject room = ObjectPool.SharedInstance.GetDeactiveRoom();
+        int randomRoomIndex = UnityEngine.Random.Range(0, ObjectPool.SharedInstance.deactiveRooms.Count);
+        GameObject room = ObjectPool.SharedInstance.GetDeactiveRoom(randomRoomIndex);
         room.SetActive(true);
-        ObjectPool.SharedInstance.deactiveRooms.Remove(room);
         float roomWidth = room.transform.Find("Floor").localScale.x;
         float roomCenter = farthestRoomEndX + roomWidth * 0.5f;
         room.transform.position = new Vector3(roomCenter, 0, 0);
+        ObjectPool.SharedInstance.deactiveRooms.Remove(room);
         ObjectPool.SharedInstance.activeRooms.Add(room);
     }
 

@@ -29,9 +29,9 @@ public class ObjectPool : MonoBehaviour
         return deactiveObjects[index];
     }
 
-    public GameObject GetDeactiveRoom()
-    {   
-        return deactiveRooms[0];
+    public GameObject GetDeactiveRoom(int index)
+    {
+       return deactiveRooms[index];
     }
 
     private void Start()
@@ -66,7 +66,7 @@ public class ObjectPool : MonoBehaviour
         {
             tmp = Instantiate(seaweed);
             tmp.SetActive(false);
-            deactiveRooms.Add(tmp);
+            deactiveObjects.Add(tmp);
         }
     }
 }

@@ -75,7 +75,7 @@ public class GeneratorScript : MonoBehaviour
 
     void AddRoom(float farthestRoomEndX)
     {
-        int randomRoomIndex = Random.Range(0, (availableRooms.Length-1));
+        int randomRoomIndex = Random.Range(0, (availableRooms.Length));
         GameObject room = (GameObject)Instantiate(availableRooms[randomRoomIndex]);
         float roomWidth = room.transform.Find("Floor").localScale.x;
         float roomCenter = farthestRoomEndX + roomWidth * 0.5f;
