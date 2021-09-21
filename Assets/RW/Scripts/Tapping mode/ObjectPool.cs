@@ -5,14 +5,18 @@ using UnityEngine;
 public class ObjectPool : MonoBehaviour
 {
     public static ObjectPool SharedInstance;
-    public List<GameObject> pooledObjects;
-    public List<GameObject> pooledRooms;
+    public List<GameObject> deactiveObjects;
+    public List<GameObject> activeObjects;
+    public List<GameObject> deactiveRooms;
+    public List<GameObject> activeRooms;
     public List<GameObject> FishesToPool;
     public GameObject room;
-    public GameObject BombToPool;
+    public GameObject bomb;
+    public GameObject seaweed;
     public int amountOfFishesToPool;
     public int amountOfBombsToPool;
     public int amountOfRooms;
+    public int amountOfSeaweed;
 
     private void Awake()
     {
@@ -20,42 +24,19 @@ public class ObjectPool : MonoBehaviour
     }
 
     // Questo metodo ritorna tutti gli oggetti che sono ancora nel pool
-    public GameObject GetPooledObject()
+    public GameObject GetDeactiveObject(int index)
     {
-        for(int i = 0; i < (amountOfBombsToPool + amountOfFishesToPool); i++)
-        {
-            if(!pooledObjects[i].activeInHierarchy)
-            {
-                return pooledObjects[i];
-            }
-        }
-        return null;
+        return deactiveObjects[index];
     }
 
-    public GameObject GetPooledRoom()
-    {
-        for (int i = 0; i < amountOfRooms; i++)
-        {
-            if(!pooledRooms[i].activeInHierarchy)
-            {
-                return pooledRooms[i];
-            }
-        }
-        return null;
-    }
-
-    public GameObject GetPooledIObj(int index)
-    {
-        if (!pooledObjects[index].activeInHierarchy)
-        {
-            return pooledObjects[index];
-        }
-        return null;
+    public GameObject GetDeactiveRoom()
+    {   
+        return deactiveRooms[0];
     }
 
     private void Start()
     {
-        pooledObjects = new List<GameObject>();
+        deactiveObjects = new List<GameObject>();
         GameObject tmp;
         foreach (GameObject g in FishesToPool)
         {
@@ -63,22 +44,29 @@ public class ObjectPool : MonoBehaviour
             {
                 tmp = Instantiate(g);
                 tmp.SetActive(false);
-                pooledObjects.Add(tmp);
+                deactiveObjects.Add(tmp);
             }
         }
 
         for (int i = 0; i < amountOfBombsToPool; i++)
         {
-            tmp = Instantiate(BombToPool);
+            tmp = Instantiate(bomb);
             tmp.SetActive(false);
-            pooledObjects.Add(tmp);
+            deactiveObjects.Add(tmp);
         }
         
         for (int i = 0; i < amountOfRooms; i++)
         {
             tmp = Instantiate(room);
             tmp.SetActive(false);
-            pooledRooms.Add(tmp);
+            deactiveRooms.Add(tmp);
+        }
+
+        for (int i = 0; i < amountOfSeaweed; i++)
+        {
+            tmp = Instantiate(seaweed);
+            tmp.SetActive(false);
+            deactiveRooms.Add(tmp);
         }
     }
 }

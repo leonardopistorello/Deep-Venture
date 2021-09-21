@@ -5,11 +5,7 @@ using System;
 
 public class TapGenerator : MonoBehaviour
 {
-    public GameObject[] availableRooms;
-    public List<GameObject> currentRooms;
     private float screenWidthInPoints;
-
-    public List<GameObject> objects;
 
     public float objectsMinDistance = 5.0f;
     public float objectsMaxDistance = 10.0f;
@@ -19,29 +15,19 @@ public class TapGenerator : MonoBehaviour
 
     void AddObject(float lastObjectX)
     {
-        int maxRange = ObjectPool.SharedInstance.amountOfBombsToPool + ObjectPool.SharedInstance.amountOfFishesToPool
-                       + ObjectPool.SharedInstance.amountOfSeaweedToPool;
+        int maxRange = ObjectPool.SharedInstance.deactiveObjects.Count;
         //1
-        int randomIndex = UnityEngine.Random.Range(0, maxRange - 1);
-        GameObject obj;
-        //2 
-        try
-        {
-            obj = ObjectPool.SharedInstance.GetPooledIObj(randomIndex);
-        }
-        catch (NullReferenceException e)
-        {
-            Debug.Log("Sono un pesce e sono null");
-            obj = ObjectPool.SharedInstance.GetPooledObject();
-        }
+        int randomIndex = UnityEngine.Random.Range(0, maxRange);
+        GameObject obj = ObjectPool.SharedInstance.GetDeactiveObject(randomIndex);
   
-         obj.SetActive(true);
+        obj.SetActive(true);
         //3
         float objectPositionX = lastObjectX + UnityEngine.Random.Range(objectsMinDistance, objectsMaxDistance);
         float randomY = UnityEngine.Random.Range(objectsMinY, objectsMaxY);
         obj.transform.position = new Vector3(objectPositionX, randomY, 0);
         //4
-        objects.Add(obj);
+        ObjectPool.SharedInstance.activeObjects.Add(obj);
+        ObjectPool.SharedInstance.deactiveObjects.Remove(obj);
     }
 
     void GenerateObjectsIfRequired()
@@ -53,7 +39,7 @@ public class TapGenerator : MonoBehaviour
         float farthestObjectX = 0;
         //2
         List<GameObject> objectsToRemove = new List<GameObject>();
-        foreach (var obj in objects)
+        foreach (var obj in ObjectPool.SharedInstance.activeObjects)
         {
             //3
             float objX = obj.transform.position.x;
@@ -68,8 +54,9 @@ public class TapGenerator : MonoBehaviour
         //6
         foreach (var obj in objectsToRemove)
         {
-                objects.Remove(obj);
-                obj.SetActive(false);
+            ObjectPool.SharedInstance.activeObjects.Remove(obj);
+            ObjectPool.SharedInstance.deactiveObjects.Add(obj);
+            obj.SetActive(false);
         }
         //7
         if (farthestObjectX < addObjectX)
@@ -81,13 +68,13 @@ public class TapGenerator : MonoBehaviour
 
     void AddRoom(float farthestRoomEndX)
     {
-        GameObject room = ObjectPool.SharedInstance.GetPooledRoom();
-       
+        GameObject room = ObjectPool.SharedInstance.GetDeactiveRoom();
         room.SetActive(true);
+        ObjectPool.SharedInstance.deactiveRooms.Remove(room);
         float roomWidth = room.transform.Find("Floor").localScale.x;
         float roomCenter = farthestRoomEndX + roomWidth * 0.5f;
         room.transform.position = new Vector3(roomCenter, 0, 0);
-        currentRooms.Add(room);
+        ObjectPool.SharedInstance.activeRooms.Add(room);
     }
 
     private void GenerateRoomIfRequired()
@@ -104,7 +91,7 @@ public class TapGenerator : MonoBehaviour
         float addRoomX = playerX + screenWidthInPoints;
         //6
         float farthestRoomEndX = 0;
-        foreach (var room in currentRooms)
+        foreach (var room in ObjectPool.SharedInstance.activeRooms)
         {
             //7
             float roomWidth = room.transform.Find("Floor").localScale.x;
@@ -126,8 +113,9 @@ public class TapGenerator : MonoBehaviour
         //11
         foreach (var room in roomsToRemove)
         {
-            currentRooms.Remove(room);
+            ObjectPool.SharedInstance.activeRooms.Remove(room);
             room.SetActive(false);
+            ObjectPool.SharedInstance.deactiveRooms.Add(room);
         }
         //12
         if (addRooms)
