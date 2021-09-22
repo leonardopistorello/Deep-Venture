@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4644133079955510673}
   - component: {fileID: 4644133079955510678}
   - component: {fileID: 4644133079955510679}
-  - component: {fileID: 4644133079955510672}
+  - component: {fileID: 3813103453586379196}
   m_Layer: 0
   m_Name: Seaweed
   m_TagString: Untagged
@@ -110,7 +110,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 16.340065, y: 29.542532}
   m_EdgeRadius: 0
---- !u!114 &4644133079955510672
+--- !u!114 &3813103453586379196
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
