@@ -11,7 +11,9 @@ public class PurpleFishController : FishesType
     /* gestione danno dello squalo */
     override protected void OnMouseDown() {
         damage ++; 
-        if(damage == lifePoints)
+        if(damage == lifePoints) {
+           damage = 0;
            Kill();
+        }
     }
 }

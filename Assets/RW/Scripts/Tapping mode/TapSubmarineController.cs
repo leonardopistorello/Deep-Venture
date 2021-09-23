@@ -5,20 +5,23 @@ using UnityEngine;
 public class TapSubmarineController : MonoBehaviour
 {
     public int speed_y = 3;
-    private Rigidbody2D rigidBody; 
     private Vector3 bottom = new Vector3(-7.731f,-2.7f,0f); // posizione più bassa raggiungibile dal sottomarino
     private Vector3 upper = new Vector3(-7.731f,2.7f,0f); // posizione più alta raggiungibile dal sottomarino
     private Vector3 movement_y; 
+    private Vector3 movement_x; 
+
     public bool isDead;
     public float forwardMovementSpeed = 5.0f;
+    
+    
 
 
     // Start is called before the first frame update
     void Start()
     {
-        rigidBody = GetComponent<Rigidbody2D>();
-        transform.position = new Vector3(-7f,0f,0f); //posizione iniziale del sottomarino
+        transform.position = new Vector3(-8f,0f,0f); //posizione iniziale del sottomarino
         movement_y = new Vector3(0,-1f,0f) * speed_y;
+        movement_x = new Vector3(1f,0f,0f) * forwardMovementSpeed;
         
     }
 
@@ -28,18 +31,13 @@ public class TapSubmarineController : MonoBehaviour
         if (transform.position.y < bottom.y || transform.position.y > upper.y) {
             movement_y = -movement_y;
         }
-        transform.position += Time.deltaTime * movement_y;
+        transform.position += Time.deltaTime * (movement_y+movement_x);
+        
+
        
     }
 
-    void FixedUpdate()
-    {
-        if (!isDead)
-        {
-                Vector2 newVelocity = rigidBody.velocity;
-                newVelocity.x = forwardMovementSpeed;
-                rigidBody.velocity = newVelocity;
-        }
+
 
         /* if (isDead)
         {
@@ -50,4 +48,4 @@ public class TapSubmarineController : MonoBehaviour
         
     }
     
-}
+

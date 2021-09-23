@@ -13,11 +13,10 @@ public class ProgressBarController : MonoBehaviour
     private void Awake()
     {   
         if(Instance == null) {
-            DontDestroyOnLoad(gameObject);
             Instance = this; 
 
         }
-        else if (Instance !=this) {
+         else if (Instance !=this) {
             Destroy(gameObject);
         }
     }
@@ -43,6 +42,10 @@ public class ProgressBarController : MonoBehaviour
           Color myGreen = new Color32(51,212,53,181);
           ProgressBar.color = myGreen;
         }
+    }
+
+    public bool IsEmpty() {
+        return ProgressBar.fillAmount == 0f;
     }
 
 
