@@ -14,4 +14,12 @@ public class UI_Controller : MonoBehaviour
     {
         SceneManager.LoadScene("TapPanic");
     }
+
+    public void Restart() {
+        SceneManager.LoadScene("TapPanic");
+    }
+
+    public void Exit() {
+        SceneManager.LoadScene("Main Menu");
+    }
 }

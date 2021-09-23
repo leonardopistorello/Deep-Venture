@@ -26,7 +26,7 @@ public class SubmarineController : MonoBehaviour
 
     public void RestartGame()
     {
-        SceneManager.LoadScene("BozzaGioco");
+        SceneManager.LoadScene("Jellyfish");
     }
 
 

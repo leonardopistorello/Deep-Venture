@@ -17,7 +17,6 @@ public class ObjectPool : MonoBehaviour
     public int amountOfBombsToPool;
     public int amountOfRooms;
     public int amountOfSeaweed;
-
     private void Awake()
     {
         SharedInstance = this;

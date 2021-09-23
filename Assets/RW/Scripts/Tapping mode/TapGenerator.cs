@@ -76,6 +76,7 @@ public class TapGenerator : MonoBehaviour
         room.transform.position = new Vector3(roomCenter, 0, 0);
         ObjectPool.SharedInstance.deactiveRooms.Remove(room);
         ObjectPool.SharedInstance.activeRooms.Add(room);
+        
     }
 
     private void GenerateRoomIfRequired()

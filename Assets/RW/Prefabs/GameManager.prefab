@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1877723705394544089
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1877723705394544091}
+  - component: {fileID: 1877723705394544090}
+  - component: {fileID: 7004815159543050310}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1877723705394544091
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877723705394544089}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.7927595, y: -0.32990155, z: -4.4706492}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1877723705394544090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877723705394544089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5503451f5c69cbd49b56b8527fd3550e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deactiveObjects: []
+  activeObjects: []
+  deactiveRooms: []
+  activeRooms:
+  - {fileID: 0}
+  FishesToPool:
+  - {fileID: 5012859042564608968, guid: 426599f4f77288e42b61c5625b9a40f3, type: 3}
+  - {fileID: 7187133158583407619, guid: a69919361e05145e4ab3b937863654ef, type: 3}
+  room: {fileID: 7557703564338953063, guid: 5b787f909c80a44b0b02cdfe22f7814a, type: 3}
+  bomb: {fileID: 8240405380278679405, guid: e8366d9c59a8673419d29da093ad444f, type: 3}
+  seaweed: {fileID: 4644133079955510676, guid: 63c62be4e31844393873c32fe67a1fc7, type: 3}
+  amountOfFishesToPool: 13
+  amountOfBombsToPool: 5
+  amountOfRooms: 7
+  amountOfSeaweed: 17
+--- !u!114 &7004815159543050310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877723705394544089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e0753ad88d7be9478e51cea63048845, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RestartButton: {fileID: 0}
+  ExitButtom: {fileID: 0}

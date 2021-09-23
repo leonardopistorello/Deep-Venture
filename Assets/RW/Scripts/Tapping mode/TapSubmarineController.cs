@@ -29,6 +29,7 @@ public class TapSubmarineController : MonoBehaviour
             movement_y = -movement_y;
         }
         transform.position += Time.deltaTime * movement_y;
+       
     }
 
     void FixedUpdate()
@@ -40,10 +41,13 @@ public class TapSubmarineController : MonoBehaviour
                 rigidBody.velocity = newVelocity;
         }
 
-        /*if (isDead)
+        /* if (isDead)
         {
-            restartButton.gameObject.SetActive(true);
-        } */
+            GameController.instance.GameOver();
+        } 
+        */
+
+        
     }
     
 }

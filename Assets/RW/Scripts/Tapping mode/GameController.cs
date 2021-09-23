@@ -1,19 +1,25 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
-{
-    static GameController instance;
+{   
+    /* modifica a public */
+    public static GameController instance; 
     public static GameController Instance
     {
-        get { if (instance == null) instance = FindObjectOfType<GameController>(); return instance; }
+        get { if (instance == null) instance = FindObjectOfType<GameController>();  return instance; }
         private set { instance = value; }
     }
+    
+   
     //-----------------
     private int bombs = 3;
     private int lives = 3;
     private int score = 0;
+    public Button RestartButton;
+    public Button ExitButtom;
     private GameState gameState;
     public static GameState GameState
     {
@@ -68,7 +74,13 @@ public class GameController : MonoBehaviour
     }
     public static void RestartGame()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("TapPanic");
+    }
+
+    public  void GameOver() {
+        /* mostra i pulsanti per far decidere al giocatore cosa fare */
+        RestartButton.gameObject.SetActive(true);
+        ExitButtom.gameObject.SetActive(true);
     }
     //------------------------
     private void KillAllFishes()
@@ -102,6 +114,7 @@ public class GameController : MonoBehaviour
                 break;
             case GameState.GameOver:
                 Time.timeScale = 0; // hard pausing the game if it is not running
+                GameOver();
                 break;
             default:
                 break;
