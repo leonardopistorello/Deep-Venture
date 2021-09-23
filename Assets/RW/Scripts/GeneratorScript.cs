@@ -24,7 +24,7 @@ public class GeneratorScript : MonoBehaviour
     void AddObject(float lastObjectX)
     {
         //1
-        int randomIndex = Random.Range(0, (availableObjects.Length-1));
+        int randomIndex = Random.Range(0, (availableObjects.Length));
         //2
         GameObject obj = (GameObject)Instantiate(availableObjects[randomIndex]);
         //3

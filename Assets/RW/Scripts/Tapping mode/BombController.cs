@@ -11,7 +11,7 @@ public class BombController : MonoBehaviour
    private Vector3 movement_x = Vector3.zero;
    private Vector3 movement_y = Vector3.zero;
 
-   private void Start() {
+    private void Start() {
        movement_x = new Vector3(-1f,0f,0f) * Random.Range(min_speedX,max_speedX);  
        movement_y = new Vector3(0,-1f,0f) * Random.Range(min_speedY,max_speedY);
        Debug.Log("Start");      

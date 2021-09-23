@@ -20,6 +20,7 @@ public class SubmarineController : MonoBehaviour
     private uint coins = 0;
     public Text coinsCollectedLabel;
     public Button restartButton;
+    public Button menuButton;
     public AudioClip coinCollectSound;
     public AudioSource sonarAudio;
     public AudioSource engineAudio;
@@ -29,6 +30,10 @@ public class SubmarineController : MonoBehaviour
         SceneManager.LoadScene("Jellyfish");
     }
 
+    public void RestarMenu()
+    {
+        SceneManager.LoadScene("Main Menu");
+    }
 
     void CollectCoin(Collider2D coinCollider)
     {
@@ -44,6 +49,9 @@ public class SubmarineController : MonoBehaviour
         {
             CollectCoin(collider);
         }
+        else if (collider.gameObject.CompareTag("Bomb_Jellyfish")) {
+            HitByBomb(collider);
+        }
         else
         {
             HitByLaser(collider);
@@ -57,6 +65,17 @@ public class SubmarineController : MonoBehaviour
         {
             AudioSource electro = laserCollider.gameObject.GetComponent<AudioSource>();
             electro.Play();
+        }
+        isDead = true;
+        submarineAnimator.SetBool("isDead", true);
+    }
+
+    void HitByBomb(Collider2D bombCollider)
+    {
+        if (!isDead)
+        {
+            AudioSource bombaMetallica = bombCollider.gameObject.GetComponent<AudioSource>();
+            bombaMetallica.Play();
         }
         isDead = true;
         submarineAnimator.SetBool("isDead", true);
@@ -121,6 +140,7 @@ public class SubmarineController : MonoBehaviour
         if (isDead && isGrounded)
         {
             restartButton.gameObject.SetActive(true);
+            menuButton.gameObject.SetActive(true);
         }
     }
 }
