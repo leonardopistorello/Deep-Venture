@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class JellyfishAttack_Controller : MonoBehaviour
+public class UI_Controller : MonoBehaviour
 {
-    
-    private void StartJelly()
+    public void StartJelly()
     {
         SceneManager.LoadScene("Jellyfish");
     }
 
-   
+     public void StartTapPanic()
+    {
+        SceneManager.LoadScene("TapPanic");
+    }
 }
