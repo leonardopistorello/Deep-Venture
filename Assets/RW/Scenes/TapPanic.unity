@@ -1243,11 +1243,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 201061749343722086, guid: 898ab9866601f5f4299497e16aea08e6, type: 3}
       propertyPath: objectsMaxDistance
-      value: 30
+      value: 33
       objectReference: {fileID: 0}
     - target: {fileID: 201061749343722086, guid: 898ab9866601f5f4299497e16aea08e6, type: 3}
       propertyPath: objectsMinDistance
-      value: 30
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 201061749343722088, guid: 898ab9866601f5f4299497e16aea08e6, type: 3}
       propertyPath: m_Name
