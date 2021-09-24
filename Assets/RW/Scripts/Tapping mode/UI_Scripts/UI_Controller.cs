@@ -8,8 +8,9 @@ public class UI_Controller : MonoBehaviour
 {
    
     public void StartJelly()
-    {
-        SceneManager.LoadScene("Jellyfish");
+    {   
+        Time.timeScale = 1;
+        SceneManager.LoadSceneAsync("Jellyfish");
         
     }
 

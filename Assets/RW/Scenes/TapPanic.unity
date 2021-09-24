@@ -281,7 +281,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -308, y: 148}
+  m_AnchoredPosition: {x: -308, y: 144.1}
   m_SizeDelta: {x: 163.59, y: 47.25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &564003914
@@ -1426,7 +1426,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 201061749343722086, guid: 898ab9866601f5f4299497e16aea08e6, type: 3}
       propertyPath: fishSpawnTime
-      value: 1.2
+      value: 1.7
       objectReference: {fileID: 0}
     - target: {fileID: 201061749343722086, guid: 898ab9866601f5f4299497e16aea08e6, type: 3}
       propertyPath: seaweedSpawnTime
