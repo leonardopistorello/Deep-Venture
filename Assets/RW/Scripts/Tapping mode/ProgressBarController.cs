@@ -27,7 +27,7 @@ public class ProgressBarController : MonoBehaviour
     void Update()
     {
         if(ProgressBar.fillAmount > 0f) { 
-           ProgressBar.fillAmount -= 0.001f; //la barra diminuisce di livello
+           ProgressBar.fillAmount -= 0.07f *  Time.deltaTime; //la barra diminuisce di livello
            if(ProgressBar.fillAmount <= 0.5f) //quando arriva a metà
               ProgressBar.color = Color.red;  //cambia il colore della barra
         }

@@ -6,6 +6,7 @@ using System;
 public class TapGenerator : MonoBehaviour
 {
     private float screenWidthInPoints;
+    public GameObject player;
 
     public float objectsMinDistance = 5.0f;
     public float objectsMaxDistance = 10.0f;
@@ -13,61 +14,69 @@ public class TapGenerator : MonoBehaviour
     public float objectsMinY = -1.4f;
     public float objectsMaxY = 1.4f;
 
-    void AddFish(float lastObjectX)
+    public float bombSpawnTime;
+    public float fishSpawnTime;
+    public float seaweedSpawnTime;
+
+    void AddFish()
     {
+        float playerX = player.transform.position.x;
         int maxRange = ObjectPool.SharedInstance.disabledFishes.Count;
         //1
         int randomIndex = UnityEngine.Random.Range(0, maxRange);
         GameObject obj = ObjectPool.SharedInstance.GetDisabledFishes(randomIndex);
   
-        obj.SetActive(true);
+        
         //3
-        float objectPositionX = lastObjectX + UnityEngine.Random.Range(objectsMinDistance, objectsMaxDistance);
+        float objectPositionX = playerX + UnityEngine.Random.Range(objectsMinDistance, objectsMaxDistance);
         float randomY = UnityEngine.Random.Range(objectsMinY, objectsMaxY);
         obj.transform.position = new Vector3(objectPositionX, randomY, 0);
         //4
+        obj.SetActive(true);
         ObjectPool.SharedInstance.activeFishes.Add(obj);
         ObjectPool.SharedInstance.disabledFishes.Remove(obj);
     }
 
-    void AddBomb(float lastObjectX)
+    void AddBomb()
     {
+        float playerX = player.transform.position.x;
         int maxRange = ObjectPool.SharedInstance.disabledBombs.Count;
         //1
         int randomIndex = UnityEngine.Random.Range(0, maxRange);
         GameObject obj = ObjectPool.SharedInstance.GetDisabledBombs(randomIndex);
-        obj.SetActive(true);
         //3
-        float objectPositionX = lastObjectX + UnityEngine.Random.Range(objectsMinDistance, objectsMaxDistance);
+        float objectPositionX = playerX + UnityEngine.Random.Range(objectsMinDistance, objectsMaxDistance);
         float randomY = UnityEngine.Random.Range(objectsMinY, objectsMaxY);
         obj.transform.position = new Vector3(objectPositionX, randomY, 0);
+        obj.SetActive(true);
         //4
         ObjectPool.SharedInstance.activeBombs.Add(obj);
         ObjectPool.SharedInstance.disabledBombs.Remove(obj);
     }
 
-    void AddSeaweed(float lastObjectX)
+    void AddSeaweed()
     {
-        /*int maxRange = ObjectPool.SharedInstance.disabledSeaweeds.Count;
+        float playerX = player.transform.position.x;
+        int maxRange = ObjectPool.SharedInstance.disabledSeaweeds.Count;
         //1
         int randomIndex = UnityEngine.Random.Range(0, maxRange);
         GameObject obj = ObjectPool.SharedInstance.GetDisabledSeaweed(randomIndex);
 
-        obj.SetActive(true);
         //3
-        float objectPositionX = lastObjectX + UnityEngine.Random.Range(objectsMinDistance, objectsMaxDistance);
+        float objectPositionX = playerX + UnityEngine.Random.Range(objectsMinDistance, objectsMaxDistance);
         float randomY = UnityEngine.Random.Range(objectsMinY, objectsMaxY);
         obj.transform.position = new Vector3(objectPositionX, randomY, 0);
+        obj.SetActive(true);
         //4
         ObjectPool.SharedInstance.activeSeaweeds.Add(obj);
         ObjectPool.SharedInstance.disabledSeaweeds.Remove(obj);
-        */
+        
     }
 
     void GenerateObjectsIfRequired()
     {
         //1
-        float playerX = transform.position.x;
+        float playerX = player.transform.position.x;
         float removeObjectsX = playerX - screenWidthInPoints;
         float addObjectX = playerX + screenWidthInPoints;
         float farthestBombX = 0;
@@ -77,19 +86,20 @@ public class TapGenerator : MonoBehaviour
            Era solo una lista di oggetti da rimuovere
            e for each per ogni nuova lista*/
         List<GameObject> bombsToRemove = new List<GameObject>();
-        List<GameObject> seaweedsToRemove = new List<GameObject>();
+        List<GameObject> seaweedToRemove = new List<GameObject>();
         foreach (var obj in ObjectPool.SharedInstance.activeBombs)
         {
             //3
             float objX = obj.transform.position.x;
             //4
-            farthestBombX = Mathf.Max(farthestBombX, objX);
+            farthestBombX = Mathf.Max(farthestBombX, objX); 
             //5
             if (objX < removeObjectsX)
             {
                 bombsToRemove.Add(obj);
             }
         }
+
         foreach (var obj in ObjectPool.SharedInstance.activeSeaweeds)
         {
             //3
@@ -99,9 +109,10 @@ public class TapGenerator : MonoBehaviour
             //5
             if (objX < removeObjectsX)
             {
-                seaweedsToRemove.Add(obj);
+                seaweedToRemove.Add(obj);
             }
         }
+
         //6
         foreach (var obj in bombsToRemove)
         {
@@ -110,21 +121,10 @@ public class TapGenerator : MonoBehaviour
             obj.SetActive(false);
         }
 
-        foreach (var obj in seaweedsToRemove)
+        foreach (var obj in seaweedToRemove)
         {
             ObjectPool.SharedInstance.activeSeaweeds.Remove(obj);
             ObjectPool.SharedInstance.disabledSeaweeds.Add(obj);
-            obj.SetActive(false);
-        }
-        //7
-        if (farthestBombX < addObjectX)
-        {
-            AddBomb(farthestBombX);
-        }
-
-        if(farthestSeaweedX < addObjectX)
-        {
-            AddSeaweed(farthestSeaweedX);
         }
     }
 
@@ -202,7 +202,29 @@ public class TapGenerator : MonoBehaviour
 
     private IEnumerator GeneratorFish()
     {
+        while(true)
+        {
+            AddFish();
+            yield return new WaitForSeconds(fishSpawnTime);
+        }
+    }
 
+    private IEnumerator GeneratorSeeweed()
+    {
+        while(true)
+        {
+            AddSeaweed();
+            yield return new WaitForSeconds(seaweedSpawnTime);
+        }
+    }
+
+    private IEnumerator GeneratorBomb()
+    {
+        while(true)
+        {
+            AddBomb();
+            yield return new WaitForSeconds(bombSpawnTime);
+        }
     }
 
 
@@ -217,6 +239,9 @@ public class TapGenerator : MonoBehaviour
         float height = 2.0f * Camera.main.orthographicSize;
         screenWidthInPoints = height * Camera.main.aspect;
         StartCoroutine(GeneratorCheck());
+        StartCoroutine(GeneratorFish());
+        StartCoroutine(GeneratorSeeweed());
+        StartCoroutine(GeneratorBomb());
 
     }
 

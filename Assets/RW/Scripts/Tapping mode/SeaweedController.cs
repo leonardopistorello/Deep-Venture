@@ -15,5 +15,6 @@ public class SeaweedController : MonoBehaviour
 
     private void Kill() {
        this.gameObject.SetActive(false);
+       ObjectPool.SharedInstance.disabledSeaweeds.Add(this.gameObject);
     }
 }

@@ -26,5 +26,6 @@ public class FishesType : MonoBehaviour
     public void Kill()
     {
         this.gameObject.SetActive(false); // destroying our fish
+        ObjectPool.SharedInstance.disabledFishes.Add(this.gameObject);
     }
 }
