@@ -21,7 +21,16 @@ public class UI_Controller : MonoBehaviour
         SceneManager.LoadScene("TapPanic");
     }
 
-    public void Exit() {
+    public void MainMenu() {
         SceneManager.LoadScene("Main Menu");
+    }
+
+    public void Credits()
+    {
+        SceneManager.LoadScene("Credits");
+    }
+    public void GameOver()
+    {
+        SceneManager.LoadScene("Highscore");
     }
 }

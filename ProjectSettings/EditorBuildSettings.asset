@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/RW/Scenes/TapPanic.unity
     guid: b21dba2481bea4d359a2f859eefc5806
+  - enabled: 1
+    path: Assets/RW/Scenes/Credits.unity
+    guid: ad2c83a5cdab51c4482d64e41708ca83
   m_configObjects: {}
