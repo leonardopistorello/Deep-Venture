@@ -5409,7 +5409,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   submarineForce: 25
-  forwardMovementSpeed: 5
+  forwardMovementSpeed: 4
   groundCheckTransform: {fileID: 1902536135}
   groundCheckLayerMask:
     serializedVersion: 2

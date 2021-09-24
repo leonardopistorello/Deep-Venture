@@ -19,7 +19,7 @@ public class TapSubmarineController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = new Vector3(-8f,0f,0f); //posizione iniziale del sottomarino
+        transform.position = new Vector3(-6.65f,0f,0f); //posizione iniziale del sottomarino
         movement_y = new Vector3(0,-1f,0f) * speed_y;
         movement_x = new Vector3(1f,0f,0f) * forwardMovementSpeed;
         
