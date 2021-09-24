@@ -8,7 +8,7 @@ First mode: jellyfish attack (by Leonardo)
 - audio: audio edit using audacity (metallic bomb, coin, first mode song, electro, sonar, submarine) 
 
 Second mode: tap panic (by Fabio and Giorgia)
-- graphics: Paint 3D,Krita, free sources on internet 
+- graphics: Paint 3D,Krita, free sources on internet(www.cgtrader.com)
 - UI: buttons, score, hunger progress bar
 - Scripts
  
