@@ -13,12 +13,12 @@ public class TapGenerator : MonoBehaviour
     public float objectsMinY = -1.4f;
     public float objectsMaxY = 1.4f;
 
-    void AddObject(float lastObjectX)
+    void AddFish(float lastObjectX)
     {
-        int maxRange = ObjectPool.SharedInstance.deactiveObjects.Count;
+        int maxRange = ObjectPool.SharedInstance.disabledFishes.Count;
         //1
         int randomIndex = UnityEngine.Random.Range(0, maxRange);
-        GameObject obj = ObjectPool.SharedInstance.GetDeactiveObject(randomIndex);
+        GameObject obj = ObjectPool.SharedInstance.GetDisabledFishes(randomIndex);
   
         obj.SetActive(true);
         //3
@@ -26,8 +26,42 @@ public class TapGenerator : MonoBehaviour
         float randomY = UnityEngine.Random.Range(objectsMinY, objectsMaxY);
         obj.transform.position = new Vector3(objectPositionX, randomY, 0);
         //4
-        ObjectPool.SharedInstance.activeObjects.Add(obj);
-        ObjectPool.SharedInstance.deactiveObjects.Remove(obj);
+        ObjectPool.SharedInstance.activeFishes.Add(obj);
+        ObjectPool.SharedInstance.disabledFishes.Remove(obj);
+    }
+
+    void AddBomb(float lastObjectX)
+    {
+        int maxRange = ObjectPool.SharedInstance.disabledBombs.Count;
+        //1
+        int randomIndex = UnityEngine.Random.Range(0, maxRange);
+        GameObject obj = ObjectPool.SharedInstance.GetDisabledBombs(randomIndex);
+        obj.SetActive(true);
+        //3
+        float objectPositionX = lastObjectX + UnityEngine.Random.Range(objectsMinDistance, objectsMaxDistance);
+        float randomY = UnityEngine.Random.Range(objectsMinY, objectsMaxY);
+        obj.transform.position = new Vector3(objectPositionX, randomY, 0);
+        //4
+        ObjectPool.SharedInstance.activeBombs.Add(obj);
+        ObjectPool.SharedInstance.disabledBombs.Remove(obj);
+    }
+
+    void AddSeaweed(float lastObjectX)
+    {
+        /*int maxRange = ObjectPool.SharedInstance.disabledSeaweeds.Count;
+        //1
+        int randomIndex = UnityEngine.Random.Range(0, maxRange);
+        GameObject obj = ObjectPool.SharedInstance.GetDisabledSeaweed(randomIndex);
+
+        obj.SetActive(true);
+        //3
+        float objectPositionX = lastObjectX + UnityEngine.Random.Range(objectsMinDistance, objectsMaxDistance);
+        float randomY = UnityEngine.Random.Range(objectsMinY, objectsMaxY);
+        obj.transform.position = new Vector3(objectPositionX, randomY, 0);
+        //4
+        ObjectPool.SharedInstance.activeSeaweeds.Add(obj);
+        ObjectPool.SharedInstance.disabledSeaweeds.Remove(obj);
+        */
     }
 
     void GenerateObjectsIfRequired()
@@ -36,32 +70,61 @@ public class TapGenerator : MonoBehaviour
         float playerX = transform.position.x;
         float removeObjectsX = playerX - screenWidthInPoints;
         float addObjectX = playerX + screenWidthInPoints;
-        float farthestObjectX = 0;
+        float farthestBombX = 0;
+        float farthestSeaweedX = 0;
         //2
-        List<GameObject> objectsToRemove = new List<GameObject>();
-        foreach (var obj in ObjectPool.SharedInstance.activeObjects)
+        /* Aggiunte due liste e cambiati nomi 
+           Era solo una lista di oggetti da rimuovere
+           e for each per ogni nuova lista*/
+        List<GameObject> bombsToRemove = new List<GameObject>();
+        List<GameObject> seaweedsToRemove = new List<GameObject>();
+        foreach (var obj in ObjectPool.SharedInstance.activeBombs)
         {
             //3
             float objX = obj.transform.position.x;
             //4
-            farthestObjectX = Mathf.Max(farthestObjectX, objX);
+            farthestBombX = Mathf.Max(farthestBombX, objX);
             //5
             if (objX < removeObjectsX)
             {
-                objectsToRemove.Add(obj);
+                bombsToRemove.Add(obj);
+            }
+        }
+        foreach (var obj in ObjectPool.SharedInstance.activeSeaweeds)
+        {
+            //3
+            float objX = obj.transform.position.x;
+            //4
+            farthestSeaweedX = Mathf.Max(farthestSeaweedX, objX);
+            //5
+            if (objX < removeObjectsX)
+            {
+                seaweedsToRemove.Add(obj);
             }
         }
         //6
-        foreach (var obj in objectsToRemove)
+        foreach (var obj in bombsToRemove)
         {
-            ObjectPool.SharedInstance.activeObjects.Remove(obj);
-            ObjectPool.SharedInstance.deactiveObjects.Add(obj);
+            ObjectPool.SharedInstance.activeBombs.Remove(obj);
+            ObjectPool.SharedInstance.disabledBombs.Add(obj);
+            obj.SetActive(false);
+        }
+
+        foreach (var obj in seaweedsToRemove)
+        {
+            ObjectPool.SharedInstance.activeSeaweeds.Remove(obj);
+            ObjectPool.SharedInstance.disabledSeaweeds.Add(obj);
             obj.SetActive(false);
         }
         //7
-        if (farthestObjectX < addObjectX)
+        if (farthestBombX < addObjectX)
         {
-            AddObject(farthestObjectX);
+            AddBomb(farthestBombX);
+        }
+
+        if(farthestSeaweedX < addObjectX)
+        {
+            AddSeaweed(farthestSeaweedX);
         }
     }
 
@@ -69,7 +132,7 @@ public class TapGenerator : MonoBehaviour
     void AddRoom(float farthestRoomEndX)
     {
         int randomRoomIndex = UnityEngine.Random.Range(0, ObjectPool.SharedInstance.deactiveRooms.Count);
-        GameObject room = ObjectPool.SharedInstance.GetDeactiveRoom(randomRoomIndex);
+        GameObject room = ObjectPool.SharedInstance.GetDisabledRooms(randomRoomIndex);
         room.SetActive(true);
         float roomWidth = room.transform.Find("Floor").localScale.x;
         float roomCenter = farthestRoomEndX + roomWidth * 0.5f;
@@ -133,8 +196,13 @@ public class TapGenerator : MonoBehaviour
         {
             GenerateRoomIfRequired();
             GenerateObjectsIfRequired();
-            yield return new WaitForSeconds(0.25f);
+            yield return new WaitForSeconds(0.5f);
         }
+    }
+
+    private IEnumerator GeneratorFish()
+    {
+
     }
 
 

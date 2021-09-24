@@ -5,8 +5,12 @@ using UnityEngine;
 public class ObjectPool : MonoBehaviour
 {
     public static ObjectPool SharedInstance;
-    public List<GameObject> deactiveObjects;
-    public List<GameObject> activeObjects;
+    public List<GameObject> disabledFishes;
+    public List<GameObject> activeFishes;
+    public List<GameObject> activeBombs;
+    public List<GameObject> disabledBombs;
+    public List<GameObject> disabledSeaweeds;
+    public List<GameObject> activeSeaweeds;
     public List<GameObject> deactiveRooms;
     public List<GameObject> activeRooms;
     public List<GameObject> FishesToPool;
@@ -23,19 +27,29 @@ public class ObjectPool : MonoBehaviour
     }
 
     // Questo metodo ritorna tutti gli oggetti che sono ancora nel pool
-    public GameObject GetDeactiveObject(int index)
+    public GameObject GetDisabledFishes(int index)
     {
-        return deactiveObjects[index];
+        return disabledFishes[index];
     }
 
-    public GameObject GetDeactiveRoom(int index)
+    public GameObject GetDisabledBombs(int index)
+    {
+        return disabledBombs[index];
+    }
+
+    public GameObject GetDisabledSeaweed(int index)
+    {
+        return disabledSeaweeds[index];
+    }
+
+    public GameObject GetDisabledRooms(int index)
     {
        return deactiveRooms[index];
     }
 
     private void Start()
     {
-        deactiveObjects = new List<GameObject>();
+        disabledFishes = new List<GameObject>();
         GameObject tmp;
         foreach (GameObject g in FishesToPool)
         {
@@ -43,7 +57,7 @@ public class ObjectPool : MonoBehaviour
             {
                 tmp = Instantiate(g);
                 tmp.SetActive(false);
-                deactiveObjects.Add(tmp);
+                disabledFishes.Add(tmp);
             }
         }
 
@@ -51,7 +65,7 @@ public class ObjectPool : MonoBehaviour
         {
             tmp = Instantiate(bomb);
             tmp.SetActive(false);
-            deactiveObjects.Add(tmp);
+            disabledBombs.Add(tmp);
         }
         
         for (int i = 0; i < amountOfRooms; i++)
@@ -65,7 +79,7 @@ public class ObjectPool : MonoBehaviour
         {
             tmp = Instantiate(seaweed);
             tmp.SetActive(false);
-            deactiveObjects.Add(tmp);
+            disabledSeaweeds.Add(tmp);
         }
     }
 }
