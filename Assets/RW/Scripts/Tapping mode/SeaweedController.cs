@@ -14,7 +14,9 @@ public class SeaweedController : MonoBehaviour
     }
 
     private void Kill() {
-       this.gameObject.SetActive(false);
+        AudioSource grass = this.gameObject.GetComponent<AudioSource>();
+        grass.Play();
+        this.gameObject.SetActive(false);
        ObjectPool.SharedInstance.disabledSeaweeds.Add(this.gameObject);
     }
 }

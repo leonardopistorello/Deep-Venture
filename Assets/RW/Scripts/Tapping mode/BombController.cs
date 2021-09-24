@@ -27,7 +27,8 @@ public class BombController : MonoBehaviour
     private void OnMouseDown() 
     {
         // DestroyAllGameObjects();
-        this.gameObject.SetActive(false);
+        AudioSource bombaMetallica = this.gameObject.GetComponent<AudioSource>();
+        bombaMetallica.Play();
         Debug.Log("GameOver()");
         GameController.SharedInstance.GameOver();
     }

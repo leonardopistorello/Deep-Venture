@@ -9,8 +9,10 @@ public class SharkController : FishesType /*MonoBehaviour*/
     
     /* gestione danno dello squalo */
     override protected void OnMouseDown() {
-        damage ++; 
-        if(damage == lifePoints) {
+        damage ++;
+        AudioSource clap = this.gameObject.GetComponent<AudioSource>();
+        clap.Play();
+        if (damage == lifePoints) {
            damage = 0;
            Kill();
            ScoreController.instance.setScore(lifePoints);
