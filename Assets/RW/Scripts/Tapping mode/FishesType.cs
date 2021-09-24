@@ -19,7 +19,6 @@ public class FishesType : MonoBehaviour
     virtual protected void OnMouseDown()
     {
         if (!GameController.IsGameRunning()) return;
-        GameController.AddScore(1);
         Kill();
     }
     // main kill function

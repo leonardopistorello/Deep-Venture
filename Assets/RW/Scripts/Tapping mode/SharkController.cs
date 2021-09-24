@@ -13,6 +13,9 @@ public class SharkController : FishesType /*MonoBehaviour*/
         if(damage == lifePoints) {
            damage = 0;
            Kill();
+           ScoreController.instance.setScore(lifePoints);
+           ScoreController.instance.UpdateScoreDisplay();
+
         }
     }
 

@@ -18,40 +18,18 @@ public class GameController : MonoBehaviour
     //-----------------
     public int bombs = 3;
     public int lives = 3;
-    public int score = 0;
+    public int currentScore = 0;
     public Button RestartButton;
     public Button ExitButton;
     public GameObject UIpanel;
     public static int gameState; //stato del gioco
-    
 
-    public static void AddScore(int score)
-    {
-        score += score;
-    }
-     
-    public static void DetonateBomb()
-    {
-        if (AreBombsAvailable() && IsGameRunning())
-        {
-            GameController.SharedInstance.bombs--;
-            GameController.SharedInstance.KillAllFishes();
-        }
-    }
-    public static void SpendLives(int lives)
-    {
-        lives -= lives;
-    }
     public static bool IsGameRunning()
     {
         return gameState == 1;
     }
     public static bool IsGameOver() {
         return gameState == 0;
-    }
-    public static bool AreBombsAvailable()
-    {
-        return GameController.SharedInstance.bombs > 0;
     }
     public static void RestartGame()
     {
@@ -62,15 +40,7 @@ public class GameController : MonoBehaviour
          gameState = 0;
         
     }
-    //------------------------
-    private void KillAllFishes()
-    {
-        foreach (FishesType f in FindObjectsOfType<FishesType>())
-        {
-                f.Kill();
-        }
-    }
-    //----------------------
+    
     void Start()
     {
         // setting game to run normally

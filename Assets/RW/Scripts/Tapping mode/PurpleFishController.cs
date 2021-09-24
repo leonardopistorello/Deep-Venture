@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class PurpleFishController : FishesType
 {
     
@@ -14,6 +16,9 @@ public class PurpleFishController : FishesType
         if(damage == lifePoints) {
            damage = 0;
            Kill();
+          ScoreController.instance.setScore(lifePoints);
+          ScoreController.instance.UpdateScoreDisplay();
+
         }
     }
 }

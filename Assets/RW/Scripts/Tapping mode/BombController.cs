@@ -29,6 +29,7 @@ public class BombController : MonoBehaviour
         // DestroyAllGameObjects();
         this.gameObject.SetActive(false);
         Debug.Log("GameOver()");
+        GameController.SharedInstance.GameOver();
     }
 
 // Distrugge tutto purtroppo. Conviene fare un check ogni tanto e vedere in che ordine vengono storicizzati gli elementi.

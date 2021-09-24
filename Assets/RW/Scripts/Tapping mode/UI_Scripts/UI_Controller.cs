@@ -10,6 +10,7 @@ public class UI_Controller : MonoBehaviour
     public void StartJelly()
     {
         SceneManager.LoadScene("Jellyfish");
+        
     }
 
      public void StartTapPanic()
